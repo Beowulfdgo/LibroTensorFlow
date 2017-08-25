@@ -29,7 +29,8 @@ loss = tf.reduce_mean(tf.square(y - y_data))
 optimizer = tf.train.GradientDescentOptimizer(0.5)
 train = optimizer.minimize(loss)
 
-init = tf.global_variables_initializer()
+# deprecated in new version  tf.global_variables_initializer()
+init = tf.initialize_all_variables()
 
 sess = tf.Session()
 sess.run(init)
